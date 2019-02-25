@@ -18,7 +18,7 @@ session_start();
       
       <ul class="tab-group">
         <li class="tab"><a href="signup.php">Sign Up</a></li>
-        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="index.php">Log In</a></li>
       </ul>
 <div id="signup">   
           <h1>Sign Up for Free</h1>
