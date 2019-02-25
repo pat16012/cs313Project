@@ -1,6 +1,6 @@
 <?php
 /* User login process, checks if user exists and password is correct */
-//require_once 'db.php';
+require 'db.php';
 // Escape email to protect against SQL injections
 $email = pg_escape_string($_POST['email']);
 $result = pg_query("SELECT * FROM users WHERE email='$email'");
