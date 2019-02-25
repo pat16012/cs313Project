@@ -1,13 +1,15 @@
 <?php 
 /* Reset your password form, sends reset.php password link */
-require 'db.php';
+require_once ('db.php');
+$db = get_db();
 session_start();
 
 // Check if form submitted with method="post"
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
     $email = pg_escape_string($_POST['email']);
-    $result = pg_query("SELECT * FROM users WHERE email='$email'");
+    $result = $db->prepare("SELECT * FROM users WHERE email='$email'");
+    $result->execute();
 
     if ( $result->num_rows == 0 ) // User doesn't exist
     { 
@@ -16,7 +18,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
     }
     else { // User exists (num_rows != 0)
 
-        $user = $result->fetch_assoc(); // $user becomes array with user data
+        $user = $result->fetch_assoc(PDO::fetch_assoc); // $user becomes array with user data
         
         $email = $user['email'];
         $hash = $user['hash'];

@@ -2,7 +2,8 @@
 /* The password reset form, the link to this page is included
    from the forgot.php email message
 */
-require 'db.php';
+require_once ('db.php');
+$db = get_db();
 session_start();
 
 // Make sure email and hash variables aren't empty
@@ -12,7 +13,8 @@ if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && 
     $hash = pg_escape_string($_GET['hash']); 
 
     // Make sure user email with matching hash exist
-    $result = pg_query("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
+    $result = $db->prepare("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
+    $result->execute();
 
     if ( $result->num_rows == 0 )
     { 

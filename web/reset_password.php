@@ -1,6 +1,7 @@
 <?php
 /* Password reset process, updates database with new user password */
-require 'db.php';
+require_once ('db.php');
+$db = get_db();
 session_start();
 
 // Make sure the form is being submitted with method="post"
@@ -16,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $hash = pg_escape_string($_POST['hash']);
         
         $sql = "UPDATE users SET password='$new_password', hash='$hash' WHERE email='$email'";
+        $statment = $db->prepare($sql);
+        $statment->execute();
 
         if ( pg_query($sql) ) {
 

@@ -10,3 +10,6 @@ CREATE TABLE users
     hash VARCHAR(256) NOT NULL,
     active BOOL NOT NULL DEFAULT FALSE 
 );
+
+INSERT INTO users (first_name, last_name, email, password, hash) 
+VALUES ('Justin', 'Paton', 'exno22@gmail.com', 'testpass', 1001);

@@ -1,5 +1,6 @@
 <?php
-
+require_once ('db.php');
+$db = get_db();
 
 /* Registration process, inserts user info into the database 
    and sends account confirmation email message
@@ -16,10 +17,17 @@ $last_name = pg_escape_string($_POST['lastname']);
 $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
 $hash = pg_escape_string( md5( rand(0,1000) ) );
-      
-// Check if user with that email already exists
-$result = pg_query("SELECT * FROM users WHERE email='$email'") or die(pg_last_error());
 
+try{
+// Check if user with that email already exists
+$result = $db->prepare ("SELECT * FROM users WHERE email='$email'");
+$result->execute();
+}
+catch (PDOException $ex)
+{
+    echo "Error with DB. Details: $ex";
+    die();
+}
 // We know user email exists if the rows returned are more than 0
 if ( $result->num_rows > 0 ) {
     
@@ -32,11 +40,13 @@ else { // Email doesn't already exist in a database, proceed...
     // active is 0 by DEFAULT (no need to include it here)
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash) " 
             . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";
+    $statment = $db->prepare($sql);
+    $statment->execute();
 
     // Add user to the database
-    if ( pg_query($sql) ){
+    if ( pg_query($statment) ){
 
-        $_SESSION['active'] = false; //false until user activates their account with verify.php
+        $_SESSION['active'] = f; //false until user activates their account with verify.php
         $_SESSION['logged_in'] = true; // So we know the user has logged in
         $_SESSION['message'] =
                 

@@ -1,16 +1,18 @@
 <?php
 /* User login process, checks if user exists and password is correct */
-//require 'db.php';
+require_once 'db.php';
+$db = get_db();
 // Escape email to protect against SQL injections
 $email = pg_escape_string($_POST['email']);
-$result = pg_query("SELECT * FROM users WHERE email='$email'");
+$result = $db->prepare("SELECT * FROM users WHERE email='$email'");
+$result->execute();
 
 if ( $result->num_rows == 0 ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist!";
     header("location: error.php");
 }
 else { // User exists
-    $user = $result->fetch_assoc();
+    $user = $result->fetch_assoc(PDO::FETCH_ASSOC);
 
     if ( password_verify($_POST['password'], $user['password']) ) {
         

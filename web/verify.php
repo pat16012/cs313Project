@@ -2,7 +2,8 @@
 /* Verifies registered user email, the link to this page
    is included in the register.php email message 
 */
-require 'db.php';
+require_once ('db.php');
+$db = get_db();
 session_start();
 
 // Make sure email and hash variables aren't empty
@@ -12,7 +13,8 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     $hash = pg_escape_string($_GET['hash']); 
     
     // Select user with matching email and hash, who hasn't verified their account yet (active = 0)
-    $result = pg_query("SELECT * FROM users WHERE email='$email' AND hash='$hash' AND active='0'");
+    $result = $db->prepare("SELECT * FROM users WHERE email='$email' AND hash='$hash' AND active='0'");
+    $result->execute();
 
     if ( $result->num_rows == 0 )
     { 
@@ -23,9 +25,17 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     else {
         $_SESSION['message'] = "Your account has been activated!";
         
-        // Set the user status to active (active = 1)
-        pg_query("UPDATE users SET active='1' WHERE email='$email'") or die($mysqli->error);
-        $_SESSION['active'] = 1;
+        try{
+           // Set the user status to active (active = 1)
+            $dbUpdate = $db->prepare("UPDATE users SET active='T' WHERE email='$email'");
+            $dbUpdate->execute();
+            $_SESSION['active'] = 'T';
+            }
+            catch (PDOException $ex)
+            {
+                echo "Error with DB. Details: $ex";
+                die();
+            }
         
         header("location: success.php");
     }
