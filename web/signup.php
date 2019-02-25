@@ -1,6 +1,6 @@
 <?php 
 /* sign up and registration */
-require 'db.php';
+//require_once 'db.php';
 session_start();
 ?>
 

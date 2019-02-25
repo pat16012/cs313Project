@@ -1,7 +1,7 @@
 <?php
 
 function get_db() {
-	//$db = NULL;
+	$db = NULL;
 	try {
 		
 		$dbUrl = getenv('CS313_DB');
