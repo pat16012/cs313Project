@@ -4,7 +4,7 @@ function get_db() {
 	$db = NULL;
 	try {
 		
-		$dbUrl = getenv('DATABASE_URL');
+		$dbUrl = getenv('CS313_DB');
 		
 		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
