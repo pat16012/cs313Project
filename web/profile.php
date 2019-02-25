@@ -1,6 +1,6 @@
 <?php
 /* Displays user information and some useful messages */
-require_once 'db.php';
+
 session_start();
 
 // Check if user is logged in using the session variable
