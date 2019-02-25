@@ -1,3 +1,9 @@
+<?php 
+/* sign up and registration */
+require 'db.php';
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +14,11 @@
     <?php include 'css/css.html'; ?>
 </head>
 <body>
-<ul class="tab-group">
+<div class="form">
+      
+      <ul class="tab-group">
         <li class="tab"><a href="signup.php">Sign Up</a></li>
-        <li class="tab active"><a href="index.php">Log In</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
       </ul>
 <div id="signup">   
           <h1>Sign Up for Free</h1>
@@ -55,7 +63,7 @@
         
       </div>
 
-      </div> <!-- /form -->
+</div> <!-- /form -->
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
     <script src="js/index.js"></script>
