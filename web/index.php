@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
       <div class="tab-content">
 
          <div id="login">   
-          <h1>Welcome Back!</h1>
+          <h1>Welcome!</h1>
           
           <form action="index.php" method="post" autocomplete="off">
           
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
           
           <p class="forgot"><a href="forgot.php">Forgot Password?</a></p>
           
-          <button class="button button-block" name="login" />Log In</button>
+          <button class="button button-block" name="login" >Log In</button>
           
           </form>
 
@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
             <input type="password"required autocomplete="off" name='password'/>
           </div>
           
-          <button type="submit" class="button button-block" name="register" />Register</button>
+          <button type="submit" class="button button-block" name="register" >Register</button>
           
           </form>
 

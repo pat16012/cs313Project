@@ -64,7 +64,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
       </label>
       <input type="email"required autocomplete="off" name="email"/>
     </div>
-    <button class="button button-block"/>Reset</button>
+    <button class="button button-block">Reset</button>
     </form>
   </div>
           

@@ -23,6 +23,7 @@ function get_db() {
 		// the details of the exception.
 		echo "Error connecting to DB. Details: $ex";
 		die();
-	}
+    }
+
 	return $db;
 }

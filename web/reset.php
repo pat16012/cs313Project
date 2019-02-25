@@ -58,7 +58,7 @@ else {
           <input type="hidden" name="email" value="<?= $email ?>">    
           <input type="hidden" name="hash" value="<?= $hash ?>">    
               
-          <button class="button button-block"/>Apply</button>
+          <button class="button button-block">Apply</button>
           
           </form>
 
