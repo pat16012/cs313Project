@@ -21,7 +21,7 @@ $query = "SELECT email FROM users WHERE EXISTS email='$email'";
 $prepare = pg_send_query($db,$query);
 $result = pg_get_result($db);
 
-
+echo("This is the result before if: $result");
 
 // Add user is result of check comes back false
 if($result == $email){
