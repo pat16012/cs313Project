@@ -9,9 +9,9 @@ $_SESSION['first_name'] = $_POST['firstname'];
 $_SESSION['last_name'] = $_POST['lastname'];
 
 // Escape all POST variables to protect against SQL injections
-$first_name = pg_escape_string($db, $_POST['firstname']);
-$last_name = pg_escape_string($db, $_POST['lastname']);
-$email = pg_escape_string($db, $_POST['email']);
+$first_name = pg_escape_string($_POST['firstname']);
+$last_name = pg_escape_string($_POST['lastname']);
+$email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
 // Check to see if the email already exists
