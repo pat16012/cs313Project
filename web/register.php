@@ -30,14 +30,21 @@ if($result != $email){
 
    if( pg_query($db, $sql)){
 
-       $_SESSION['logged_in'] = true; // So we know when the user has logged in
-
-       //redirect to profile page
-       header("Location: profile.php");
+        $_SESSION['message'] = 'Registration Failed, Please Try Again';
+        header("Location: error.php");
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
        header("Location: error.php");
+       $sql = "INSERT INTO users (first_name, last_name, email, password)"
+    . "VALUES ('$first_name','$last_name','$email','$password')";
+   }
+   if( pg_query($db, $sql)){
+
+       $_SESSION['logged_in'] = true; // So we know when the user has logged in
+
+       //redirect to profile page
+       header("Location: profile.php");
    }
 }
 else{
