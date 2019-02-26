@@ -1,7 +1,7 @@
 <?php
 require ('db.php');
 $db = get_db();
-
+$dbconn = $db;
 /* Registration process, inserts user info into the database 
    and sends account confirmation email message
  */
@@ -36,7 +36,7 @@ else{
     $statment->execute();
 
     // Add user to the database
-    if ( pg_query($db, $sql) ){
+    if ( pg_query($dbconn, $sql) ){
 
         $_SESSION['active'] = f; //false until user activates their account with verify.php
         $_SESSION['logged_in'] = true; // So we know the user has logged in
