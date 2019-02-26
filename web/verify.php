@@ -23,8 +23,8 @@ echo("This is the result before if: $resultData <br>");
 
 $user = pg_fetch_all($result, PGSQL_BOTH);
 
-//echo("Datauser [0]: $user");
-echo("Datauser [0]: $user[0]");
+echo("Datauser [0]: $user");
+//echo("Datauser [0]: $user[0]");
 //print_r($user);
 
 if($resultData[0] != $email){
