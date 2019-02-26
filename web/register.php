@@ -16,7 +16,7 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 
 // Check to see if the email already exists
 $query = "SELECT email FROM users WHERE email='$email'";
-pg_send_query($db, $query);
+pg_send_query($query, $db);
 $result = pg_get_result($db);
 
 // Add user is result of check comes back false
@@ -24,7 +24,7 @@ if($result == FALSE){
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
     . "VALUES ('$first_name','$last_name','$email','$password')";
 
-   if( pg_query($db, $sql)){
+   if( pg_query($sql, $db)){
 
        $_SESSION['logged_in'] = true; // So we know when the user has logged in
 
