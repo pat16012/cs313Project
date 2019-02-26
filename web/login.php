@@ -12,6 +12,15 @@ session_start();
     <title>Login</title>
 </head>
 <body>
+
+<h1>Welcome</h1>
+    <div>
+        <form action="verify.php" method="post" autocomplete="off">
+            E-mail:         <br><input type="email" required name="email" autocomplete="off"><br>
+            Password:       <br><input type="password" required name="password" autocomplete="off"><br>
+            <input type="Submit">
+        </form>
+    </div>
     
 </body>
 </html>

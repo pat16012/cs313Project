@@ -11,6 +11,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
 </head>
+
+
 <body>
 
     <div class="form">

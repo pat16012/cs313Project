@@ -1,7 +1,7 @@
 <?php
 require ('db.php');
 $db = get_db();
-$stmtname = '';
+
 // Registration checks inputs for SQL injection and enters data into database only if not already registered.
 
 // Session variables to be used on profile page.
@@ -16,7 +16,6 @@ $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
 // Check to see if the email already exists
-$params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
@@ -37,9 +36,8 @@ else{
    if( pg_query($db, $sql)){
 
        $_SESSION['logged_in'] = true; // So we know when the user has logged in
-       echo("Data Entered DB!");
        //redirect to profile page
-       //header("Location: profile.php");
+       header("Location: profile.php");
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
