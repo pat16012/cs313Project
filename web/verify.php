@@ -9,6 +9,11 @@ $email = pg_escape_string($_POST['email']);
 //Check to see if email is in DB
 $query = "SELECT * FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
+
+if(!$result){
+    echo "An Error Has occured";
+}
+
 $user = pg_fetch_all($result);
 
 echo("Data [0]: $user");
