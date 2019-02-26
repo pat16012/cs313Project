@@ -18,9 +18,8 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 // Check to see if the email already exists
 $params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
-$prepare = pg_prepare($db,$stmtname,$query);
-$result = pg_execute($db,$stmtname,$params);
-echo ('THIS IS THE RESULT:' + $result);
+$result = $db->prepare($query);
+$result->execute();
 
 
 // Add user is result of check comes back false
