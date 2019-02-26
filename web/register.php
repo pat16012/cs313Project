@@ -18,28 +18,33 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 // Check to see if the email already exists
 $params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
-$result = $db->prepare($query);
-$result->execute();
+try {
+    $result = $db->prepare($query);
+    $result->execute();
 
 
-// Add user is result of check comes back false
-if($result == FALSE){
-    $sql = "INSERT INTO users (first_name, last_name, email, password)"
+    // Add user is result of check comes back false
+    if ($result == false) {
+        $sql = "INSERT INTO users (first_name, last_name, email, password)"
     . "VALUES ('$first_name','$last_name','$email','$password')";
 
-   if( pg_query($db, $sql)){
+        if (pg_query($db, $sql)) {
+            $_SESSION['logged_in'] = true; // So we know when the user has logged in
 
-       $_SESSION['logged_in'] = true; // So we know when the user has logged in
-
-       //redirect to profile page
-       header("Location: profile.php");
-   }
-   else{
-       $_SESSION['message'] = 'Registration Failed, Please Try Again';
-       header("Location: error.php");
-   }
+            //redirect to profile page
+            header("Location: profile.php");
+        } else {
+            $_SESSION['message'] = 'Registration Failed, Please Try Again';
+            header("Location: error.php");
+        }
+    } else {
+        $_SESSION['Message'] = 'Email Provided Already in Use';
+        header("location: error.php");
+    }
 }
-else{
+catch (PDOException $ex)
+{
+    echo "Error with DB. Details: $ex";
     $_SESSION['Message'] = 'Email Provided Already in Use';
-    header("location: error.php");
+    header("location: error.php ");
 }
