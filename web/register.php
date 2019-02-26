@@ -35,32 +35,6 @@ else{
     $statment = $db->prepare($sql);
     $statment->execute();
 
-    // Add user to the database
-    if ( pg_query($dbconn, $sql) ){
-
-        $_SESSION['active'] = f; //false until user activates their account with verify.php
-        $_SESSION['logged_in'] = true; // So we know the user has logged in
-        $_SESSION['message'] =
-                
-                 "Confirmation link has been sent to $email, please verify
-                 your account by clicking on the link in the message!";
-
-        // Send registration confirmation link (verify.php)
-        $to      = $email;
-        $subject = 'Account Verification ( CS313 Project )';
-        $message_body = '
-        Hello '.$first_name.',
-
-        Thank you for signing up!
-
-        Please click this link to activate your account:
-
-        http://localhost/login-system/verify.php?email='.$email.'&hash='.$hash;  
-
-        mail( $to, $subject, $message_body );
-
-        header("location: profile.php"); 
-}
 }
 
 //catch (PDOException $ex)
