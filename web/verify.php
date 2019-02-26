@@ -4,6 +4,7 @@ session_start();
 
 // Escape to protect against SQL injection
 $email = pg_escape_string($_POST['email']);
+$password = pg_escape_string($_POST['password']);
  
 echo("THis is the post e-mail : $email");
 
