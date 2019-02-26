@@ -24,7 +24,7 @@ $result = pg_get_result($db);
 
 
 // Add user is result of check comes back false
-if($result == 0){
+if($result == FALSE){
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
     . "VALUES ('$first_name','$last_name','$email','$password')";
 
