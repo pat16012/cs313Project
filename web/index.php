@@ -14,8 +14,8 @@ session_start();
 <body>
 
     <div class="form">
-        <li class="tab"><a href="#signup">Sign Up</a></li>
-        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab"><a href="signup.php">Sign Up</a></li>
+        <li class="tab active"><a href="login.php">Log In</a></li>
     </div>
     
 </body>
