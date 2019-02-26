@@ -22,7 +22,7 @@ $hash = pg_escape_string( md5( rand(0,1000) ) );
 // Check if user with that email already exists
 $result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
-if($result > 0){
+if($result > 1){
    
     $_SESSION['message'] = 'Registration failed, Email already used';
     header("location: signup.php");
