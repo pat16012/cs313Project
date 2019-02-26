@@ -16,16 +16,16 @@ $resultData = pg_fetch_all($result,PGSQL_BOTH);
 
 
 
-echo("This is the result before if: $resultData <br>");
+//echo("This is the result before if: $resultData <br>");
 
 
 
 
 $user = pg_fetch_all($result, PGSQL_BOTH);
 
-echo("Datauser [0]: $user");
+//echo("Datauser [0]: $user");
 //echo("Datauser [0]: $user[0]");
-//print_r($user);
+print_r($user);
 
 if($resultData[0] != $email){
     $_SESSION['message'] = "User with that email doesn't exist!";
