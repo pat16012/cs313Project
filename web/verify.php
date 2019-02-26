@@ -13,7 +13,7 @@ $user = pg_fetch_all($result);
 
 echo("Data [0]: $user");
 echo("Data [0]: $user[0]");
-print_r($resultData);
+print_r($user);
 
 if($resultData[0] != $email){
     $_SESSION['message'] = "User with that email doesn't exist!";
