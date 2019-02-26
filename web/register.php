@@ -24,20 +24,15 @@ $result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
 $statment = $result->fetchAll();
 
+
 }
 catch (PDOException $ex)
 {
     echo "Error with DB. Details: $ex";
     die();
 }
-// We know user email exists if the rows returned are more than 0
-if ($statment == $email) {
-    
-    $_SESSION['message'] = 'User with this email already exists!';
-    header("location: error.php");
-    
-}
-else { // Email doesn't already exist in a database, proceed...
+
+try{
 
     // active is 0 by DEFAULT (no need to include it here)
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash) " 
@@ -70,10 +65,8 @@ else { // Email doesn't already exist in a database, proceed...
         mail( $to, $subject, $message_body );
 
         header("location: profile.php"); 
-
     }
-
-    else {
+    catch{
         $_SESSION['message'] = 'Registration failed!';
         header("location: error.php");
     }
