@@ -12,7 +12,7 @@ echo("THis is the post e-mail : $email");
 // Check to see if the email already exists
 $query = "SELECT * FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
-$resultData = pg_fetch_array($result,0);
+$resultData = pg_fetch_all($result,PGSQL_BOTH);
 
 
 
