@@ -3,7 +3,7 @@ function get_db() {
 	$db = NULL;
 	try {
 		
-		$dbUrl = getenv('CLEARDB_DATABASE_URL');
+		$dbUrl = getenv('JAWSDB_URL');
 		
 		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
