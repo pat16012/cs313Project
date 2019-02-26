@@ -7,7 +7,7 @@ session_start();
 $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string($_POST['password']);
  
-echo("THis is the post e-mail : $email");
+echo("THis is the post e-mail : $email       ");
 
 // Check to see if the email already exists
 $query = "SELECT * FROM users WHERE email='$email'";
