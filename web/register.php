@@ -1,7 +1,7 @@
 <?php
 require ('db.php');
-$dbconn = get_db();
-$db = $dbconn;
+$db = get_db();
+$stmtname = '';
 // Registration checks inputs for SQL injection and enters data into database only if not already registered.
 
 // Session variables to be used on profile page.
@@ -16,9 +16,10 @@ $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT));
 
 // Check to see if the email already exists
+$params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
-$prepare = pg_prepare($db,$query);
-$result = pg_execute($db,$query);
+$prepare = pg_prepare($db,$stmtname,$query);
+$result = pg_execute($db,$stmtname,$params);
 
 
 // Add user is result of check comes back false
