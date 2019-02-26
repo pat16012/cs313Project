@@ -44,7 +44,7 @@ else { // Email doesn't already exist in a database, proceed...
     $statment->execute();
 
     // Add user to the database
-    if ( pg_query($sql) ){
+    if ( pg_query($db, $sql) ){
 
         $_SESSION['active'] = f; //false until user activates their account with verify.php
         $_SESSION['logged_in'] = true; // So we know the user has logged in
