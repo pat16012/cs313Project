@@ -29,7 +29,7 @@ if($result == FALSE){
        $_SESSION['logged_in'] = true; // So we know when the user has logged in
 
        //redirect to profile page
-       header("Location: propile.php");
+       header("Location: profile.php");
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
