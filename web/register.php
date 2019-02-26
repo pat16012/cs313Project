@@ -17,7 +17,7 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 
 // Check to see if the email already exists
 $params = array($email);
-$query = "SELECT email FROM users WHERE EXISTS email='$email'";
+$query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 
 
