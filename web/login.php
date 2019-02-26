@@ -4,10 +4,10 @@ require_once 'db.php';
 $db = get_db();
 // Escape email to protect against SQL injections
 $email = pg_escape_string($_POST['email']);
-$result = $db->prepare("SELECT * FROM users WHERE email='$email'");
+$result = $db->prepare("SELECT email FROM users WHERE email='$email'");
 $result->execute();
 
-if ( $result->num_rows == 0 ){ // User doesn't exist
+if ( $result->fetchColumn == NULL ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist!";
     header("location: error.php");
 }
