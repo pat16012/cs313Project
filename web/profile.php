@@ -1,6 +1,5 @@
 <?php
 /* Displays user information and some useful messages */
-
 session_start();
 
 // Check if user is logged in using the session variable
@@ -60,12 +59,12 @@ else {
           <h2><?php echo $first_name.' '.$last_name; ?></h2>
           <p><?= $email ?></p>
           
-          <a href="logout.php"><button class="button button-block" name="logout">Log Out</button></a>
+          <a href="logout.php"><button class="button button-block" name="logout"/>Log Out</button></a>
 
     </div>
     
-<!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/index.js"></script>
-        -->
+
 </body>
 </html>

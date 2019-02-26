@@ -1,15 +1,13 @@
 <?php 
 /* Reset your password form, sends reset.php password link */
-require_once ('db.php');
-$db = get_db();
+require 'db.php';
 session_start();
 
 // Check if form submitted with method="post"
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
-    $email = pg_escape_string($_POST['email']);
-    $result = $db->prepare("SELECT * FROM users WHERE email='$email'");
-    $result->execute();
+    $email = $mysqli->escape_string($_POST['email']);
+    $result = $mysqli->query("SELECT * FROM users WHERE email='$email'");
 
     if ( $result->num_rows == 0 ) // User doesn't exist
     { 
@@ -18,7 +16,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
     }
     else { // User exists (num_rows != 0)
 
-        $user = $result->fetch_assoc(PDO::fetch_assoc); // $user becomes array with user data
+        $user = $result->fetch_assoc(); // $user becomes array with user data
         
         $email = $user['email'];
         $hash = $user['hash'];
@@ -66,7 +64,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' )
       </label>
       <input type="email"required autocomplete="off" name="email"/>
     </div>
-    <button class="button button-block">Reset</button>
+    <button class="button button-block"/>Reset</button>
     </form>
   </div>
           

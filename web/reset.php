@@ -2,19 +2,17 @@
 /* The password reset form, the link to this page is included
    from the forgot.php email message
 */
-require_once ('db.php');
-$db = get_db();
+require 'db.php';
 session_start();
 
 // Make sure email and hash variables aren't empty
 if( isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !empty($_GET['hash']) )
 {
-    $email = pg_escape_string($_GET['email']); 
-    $hash = pg_escape_string($_GET['hash']); 
+    $email = $mysqli->escape_string($_GET['email']); 
+    $hash = $mysqli->escape_string($_GET['hash']); 
 
     // Make sure user email with matching hash exist
-    $result = $db->prepare("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
-    $result->execute();
+    $result = $mysqli->query("SELECT * FROM users WHERE email='$email' AND hash='$hash'");
 
     if ( $result->num_rows == 0 )
     { 
@@ -60,7 +58,7 @@ else {
           <input type="hidden" name="email" value="<?= $email ?>">    
           <input type="hidden" name="hash" value="<?= $hash ?>">    
               
-          <button class="button button-block">Apply</button>
+          <button class="button button-block"/>Apply</button>
           
           </form>
 
