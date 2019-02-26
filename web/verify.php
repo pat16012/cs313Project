@@ -13,10 +13,11 @@ if(isset($_GET['email']) && !empty($_GET['email']) AND isset($_GET['hash']) && !
     $hash = pg_escape_string($_GET['hash']); 
     
     // Select user with matching email and hash, who hasn't verified their account yet (active = 0)
-    $result = $db->prepare("SELECT * FROM users WHERE email='$email' AND hash='$hash' AND active='0'");
+    $result = $db->prepare("SELECT email, active FROM users WHERE email='$email' AND active='F'");
     $result->execute();
+    $resultData = $result->fetch_assoc(PDO::fetch_assoc)
 
-    if ( $result->num_rows == 0 )
+    if ( $resultData == $email && active = 'F' )
     { 
         $_SESSION['message'] = "Account has already been activated or the URL is invalid!";
 

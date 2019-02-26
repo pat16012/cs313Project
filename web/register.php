@@ -20,8 +20,9 @@ $hash = pg_escape_string( md5( rand(0,1000) ) );
 
 try{
 // Check if user with that email already exists
-$result = $db->prepare ("SELECT * FROM users WHERE email='$email'");
+$result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
+$resultData = $result->fetch_assoc(PDO::fetch_assoc);
 }
 catch (PDOException $ex)
 {
@@ -29,7 +30,7 @@ catch (PDOException $ex)
     die();
 }
 // We know user email exists if the rows returned are more than 0
-if ( $result->num_rows > 0 ) {
+if ( $resultData == $email ) {
     
     $_SESSION['message'] = 'User with this email already exists!';
     header("location: error.php");
