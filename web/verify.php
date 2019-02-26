@@ -5,11 +5,14 @@ session_start();
 // Escape to protect against SQL injection
 $email = pg_escape_string($_POST['email']);
  
+echo("THis is the post e-mail : $email");
 
 // Check to see if the email already exists
 $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
+
+
 
 echo("This is the result before if: $resultData <br>");
 print_r($resultData);
