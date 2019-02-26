@@ -1,5 +1,6 @@
 <?php
 require ('db.php');
+$db = get_db();
 session_start();
 
 // Escape to protect against SQL injection
@@ -18,9 +19,7 @@ $resultData = pg_fetch_array($result,0);
 echo("This is the result before if: $resultData <br>");
 print_r($resultData);
 
-if(!$result){
-    echo "An Error Has occured";
-}
+
 
 $user = pg_fetch_all($result, PGSQL_BOTH);
 
