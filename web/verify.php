@@ -10,6 +10,8 @@ $query = "SELECT email,firstname,lastname FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_all($result,0);
 
+echo("Data [0]: $resultData[0]");
+echo("Data [0]: $resultData");
 print_r($resultData);
 
 if($resultData[0] != $email){
