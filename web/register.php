@@ -18,12 +18,14 @@ $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
 $hash = pg_escape_string( md5( rand(0,1000) ) );
 
-try{
+
 // Check if user with that email already exists
 $result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
 if($result > 0){
-    echo "Error with DB. Details: $ex";
+   
+    $_SESSION['message'] = 'Registration failed, Email already used';
+    header("location: signup.php");
     die();
 }
 else{
@@ -60,9 +62,10 @@ else{
         header("location: profile.php"); 
 }
 }
-catch (PDOException $ex)
-{
-    $_SESSION['message'] = 'Registration failed, Email already used';
-        header("location: signup.php");
-}
+
+//catch (PDOException $ex)
+//{
+//    $_SESSION['message'] = 'Registration failed, Email already used';
+//        header("location: signup.php");
+//}
 
