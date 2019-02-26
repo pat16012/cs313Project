@@ -20,6 +20,7 @@ $params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
 $prepare = pg_prepare($db,$stmtname,$query);
 $result = pg_execute($db,$stmtname,$params);
+echo ('THIS IS THE RESULT:' + $result);
 
 
 // Add user is result of check comes back false
