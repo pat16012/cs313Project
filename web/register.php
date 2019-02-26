@@ -22,7 +22,8 @@ try{
 // Check if user with that email already exists
 $result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
-$resultData = $result->fetch_assoc(PDO::fetch_assoc);
+$statment = $result->fetchAll();
+
 }
 catch (PDOException $ex)
 {
@@ -30,7 +31,7 @@ catch (PDOException $ex)
     die();
 }
 // We know user email exists if the rows returned are more than 0
-if ( $resultData == $email ) {
+if ($statment == $email) {
     
     $_SESSION['message'] = 'User with this email already exists!';
     header("location: error.php");
