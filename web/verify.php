@@ -6,7 +6,7 @@ session_start();
 $email = pg_escape_string($_POST['email']);
 
 //Check to see if email is in DB
-$query = "SELECT email,firstname,lastname FROM users WHERE email='$email'";
+$query = "SELECT * FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
 
