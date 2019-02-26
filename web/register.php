@@ -1,5 +1,5 @@
 <?php
-require_once ('db.php');
+require ('db.php');
 $db = get_db();
 
 /* Registration process, inserts user info into the database 
