@@ -6,15 +6,19 @@ session_start();
 $email = pg_escape_string($_POST['email']);
  
 
-//Check to see if email is in DB
-$query = "SELECT * FROM users WHERE email='$email'";
+// Check to see if the email already exists
+$query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
+$resultData = pg_fetch_array($result,0);
+
+echo("This is the result before if: $resultData <br>");
+print_r($resultData);
 
 if(!$result){
     echo "An Error Has occured";
 }
 
-$user = pg_fetch_all($result);
+$user = pg_fetch_all($result, PGSQL_BOTH);
 
 echo("Data [0]: $user");
 echo("Data [0]: $user[0]");
