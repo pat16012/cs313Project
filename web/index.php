@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
          <div id="login">   
           <h1>Welcome</h1>
           
-          <form action="index.php" method="post" autocomplete="off">
+          <form action="login.php" method="post" autocomplete="off">
           
             <div class="field-wrap">
             <label>
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="index.php" method="post" autocomplete="off">
+          <form action="register.php" method="post" autocomplete="off">
           
           <div class="top-row">
             <div class="field-wrap">
