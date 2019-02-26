@@ -19,13 +19,13 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 $params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
-$resultData = pg_fetch_array($result,0, PGSQL_BOTH);
+$resultData = pg_fetch_array($result,0);
 
 echo("This is the result before if: $resultData");
 print_r($resultData);
 
 // Add user is result of check comes back false
-if($result == $email){
+if($resultData[0] == $email){
     $_SESSION['Message'] = 'Email Provided Already in Use';
     //header("location: error.php");
     echo("This is the result: $result");
