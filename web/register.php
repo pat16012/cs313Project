@@ -22,6 +22,7 @@ $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0, PGSQL_BOTH);
 
 echo("This is the result before if: $resultData");
+print_r($resultData);
 
 // Add user is result of check comes back false
 if($result == $email){
