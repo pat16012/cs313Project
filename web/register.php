@@ -19,7 +19,7 @@ $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT)
 $params = array($email);
 $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
-$resultData = pg_fetch_array($result,$row, $result_type);
+$resultData = pg_fetch_array($result,0, PGSQL_BOTH);
 
 echo("This is the result before if: $resultData");
 
