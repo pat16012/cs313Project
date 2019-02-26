@@ -28,7 +28,7 @@ print_r($resultData);
 if($resultData[0] == $email){
     $_SESSION['Message'] = 'Email Provided Already in Use';
     //header("location: error.php");
-    echo("This is the result: $result");
+    echo("This is the result: " + $resultData[0]);
 }
 else{
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
