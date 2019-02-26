@@ -26,15 +26,7 @@ if($result > 0){
     echo "Error with DB. Details: $ex";
     die();
 }
-}
-catch (PDOException $ex)
-{
-    $_SESSION['message'] = 'Registration failed, Email already used';
-        header("location: signup.php");
-}
-
-try{
-
+else{
     // active is 0 by DEFAULT (no need to include it here)
     $sql = "INSERT INTO users (first_name, last_name, email, password, hash) " 
             . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";
@@ -66,11 +58,11 @@ try{
         mail( $to, $subject, $message_body );
 
         header("location: profile.php"); 
-    }
-    }
-    catch{
-        $_SESSION['message'] = 'Registration failed!';
-        header("location: error.php");
-    }
-
 }
+}
+catch (PDOException $ex)
+{
+    $_SESSION['message'] = 'Registration failed, Email already used';
+        header("location: signup.php");
+}
+
