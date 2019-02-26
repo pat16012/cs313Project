@@ -22,14 +22,15 @@ try{
 // Check if user with that email already exists
 $result = $db->prepare ("SELECT email FROM users WHERE email='$email'");
 $result->execute();
-$statment = $result->fetchAll();
-
-
+if($result > 0){
+    echo "Error with DB. Details: $ex";
+    die();
+}
 }
 catch (PDOException $ex)
 {
-    echo "Error with DB. Details: $ex";
-    die();
+    $_SESSION['message'] = 'Registration failed, Email already used';
+        header("location: signup.php");
 }
 
 try{
@@ -65,6 +66,7 @@ try{
         mail( $to, $subject, $message_body );
 
         header("location: profile.php"); 
+    }
     }
     catch{
         $_SESSION['message'] = 'Registration failed!';
