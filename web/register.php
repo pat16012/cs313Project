@@ -24,30 +24,25 @@ $result = pg_get_result($db);
 
 
 // Add user is result of check comes back false
-if($result != $email){
+if($result == $email){
+    $_SESSION['Message'] = 'Email Provided Already in Use';
+    //header("location: error.php");
+    echo("This is the result: $result");
+}
+else{
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
     . "VALUES ('$first_name','$last_name','$email','$password')";
 
    if( pg_query($db, $sql)){
 
-        $_SESSION['message'] = 'Registration Failed, Please Try Again';
-        header("Location: error.php");
+       $_SESSION['logged_in'] = true; // So we know when the user has logged in
+       echo("Data Entered DB!");
+       //redirect to profile page
+       //header("Location: profile.php");
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
-       header("Location: error.php");
-       $sql = "INSERT INTO users (first_name, last_name, email, password)"
-    . "VALUES ('$first_name','$last_name','$email','$password')";
+       //header("Location: error.php");
+       echo("This is not the result: $result");
    }
-   if( pg_query($db, $sql)){
-
-       $_SESSION['logged_in'] = true; // So we know when the user has logged in
-
-       //redirect to profile page
-       header("Location: profile.php");
-   }
-}
-else{
-    $_SESSION['Message'] = 'Email Provided Already in Use';
-    header("location: error.php");
 }
