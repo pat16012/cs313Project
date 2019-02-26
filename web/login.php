@@ -7,7 +7,7 @@ $email = pg_escape_string($_POST['email']);
 $result = $db->prepare("SELECT email FROM users WHERE email='$email'");
 $result->execute();
 
-if ( $result->fetchColumn == NULL ){ // User doesn't exist
+if ( $result != $email ){ // User doesn't exist
     $_SESSION['message'] = "User with that email doesn't exist!";
     header("location: error.php");
 }
@@ -19,7 +19,6 @@ else { // User exists
         $_SESSION['email'] = $user['email'];
         $_SESSION['first_name'] = $user['first_name'];
         $_SESSION['last_name'] = $user['last_name'];
-        $_SESSION['active'] = $user['active'];
         
         // This is how we'll know the user is logged in
         $_SESSION['logged_in'] = true;
