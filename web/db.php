@@ -1,9 +1,11 @@
 <?php
 function get_db() {
 	$db = NULL;
-	try {
+	$db = pg_connect(getenv("DATABASE_URL"));
+	/*try {
 		
 		$dbUrl = getenv('DATABASE_URL');
+
 		
 		// Get the various parts of the DB Connection from the URL
 		$dbopts = parse_url($dbUrl);
@@ -22,6 +24,6 @@ function get_db() {
 		// the details of the exception.
 		echo "Error connecting to DB. Details: $ex";
 		die();
-	}
+	}*/
 	return $db;
 }
