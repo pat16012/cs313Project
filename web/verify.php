@@ -13,17 +13,9 @@ $result = pg_query($db,$query);
 $resultData = pg_fetch_all($result,PGSQL_BOTH);
 $unHash = password_verify($_POST['password'], $resultData[0][4]);
 
-if (password_verify($_POST['password'], $resultData[0][4])) {
-    echo 'Password is valid!';
-} else {
-    echo 'Invalid password.';
-}
-
-
-
 if($resultData[0][3] != $email){
     $_SESSION['message'] = "User with that email doesn't exist!";
-    //header("location: error.php");
+    header("location: error.php");
 }
 else{
     if(password_verify($_POST['password'], $resultData[0][4])){
@@ -33,14 +25,14 @@ else{
         
         // Know if user is logged in
         $_SESSION['logged_in'] = true;
-        echo 'Password is valid2!';
-        //header("location: profile.php");
+        
+        header("location: profile.php");
 
     }
     else {
         $_SESSION['message'] = "You have entered the wrong password, please try again";
-        //header("location: error.php");
-        echo 'Password is invalid2!';
+        header("location: error.php");
+        
     }    
 
 }
