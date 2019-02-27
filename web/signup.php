@@ -55,12 +55,7 @@ session_start();
             </label>
             <input type="password"required autocomplete="off" name='password'/>
           </div>
-          <div class="field-wrap">
-            <label>
-              Confirm Password<span class="req">*</span>
-            </label>
-            <input type="password"required name="confirmpassword" autocomplete="off"/>
-          </div>
+          
           
           <button type="submit" class="button button-block" name="register" >Register</button>
           
