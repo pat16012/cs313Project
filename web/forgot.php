@@ -8,7 +8,7 @@ session_start();
 if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) 
 {   
     $email = pg_escape_string($_POST['email']);
-    $result = pg_query($db, "SELECT email FROM users WHERE email='$email'");
+    $result = pg_query($db, "SELECT * FROM users WHERE email='$email'");
     $resultData = pg_fetch_all($result,PGSQL_BOTH);
 
     if ( $resultData[0][3] != $email ) // User doesn't exist
