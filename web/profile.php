@@ -26,6 +26,7 @@ else {
     <?php include 'css/css.html'; ?>
 </head>
 <body>
+    <h1>Welcome</h1>
   <div class="form">
           
           <h2><?php echo $first_name.' '.$last_name; ?></h2>
