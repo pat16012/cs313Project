@@ -22,7 +22,7 @@ $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
 
 // Add user is result of check comes back false
-if($resultData[0] == $email){
+if($resultData[0][3] == $email){
     $_SESSION['Message'] = 'Email Provided Already in Use';
     header("location: error.php");
     
@@ -58,7 +58,6 @@ else{
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
-       //header("Location: error.php");
-       echo("This is not the result: $result");
+       header("Location: error.php");
    }
 }
