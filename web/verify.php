@@ -23,6 +23,11 @@ if (password_verify($_POST['password'], $resultData[0][4])) {
     echo 'Invalid password.';
 }
 
+if (password_verify($_POST['password'], $resultData['password'])) {
+    echo 'Password is valid!';
+} else {
+    echo 'Invalid password.';
+}
 /*
 
 if($resultData[0][3] != $email){
