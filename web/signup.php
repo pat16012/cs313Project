@@ -24,7 +24,7 @@ session_start();
         <div id="signup">   
           <h1>Sign Up for Free</h1>
           
-          <form action="index.php" method="post" autocomplete="off">
+          <form action="register.php" method="post" autocomplete="off">
           
           <div class="top-row">
             <div class="field-wrap">
@@ -56,7 +56,7 @@ session_start();
             <input type="password"required autocomplete="off" name='password'/>
           </div>
           
-          <button type="submit" class="button button-block" name="register" />Register</button>
+          <button type="submit" class="button button-block" name="register" >Register</button>
           
           </form>
 
