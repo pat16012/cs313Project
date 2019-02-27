@@ -21,6 +21,9 @@ $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
 
+echo("result: $resultData");
+echo("result[0]: $resultData[0]");
+
 // Add user is result of check comes back false
 if($resultData[0][3] == $email){
     $_SESSION['Message'] = 'Email Provided Already in Use';
@@ -58,6 +61,6 @@ else{
    }
    else{
        $_SESSION['message'] = 'Registration Failed, Please Try Again';
-       header("Location: error.php");
+      // header("Location: error.php");
    }
 }
