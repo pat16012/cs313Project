@@ -13,12 +13,12 @@ body {
 
 a {
   text-decoration: none;
-  color: #1ab188;
+  color: royalblue;
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 a:hover {
-  color: #179b77;
+  color: royalblue;
 }
 
 .form {
@@ -55,11 +55,11 @@ a:hover {
   transition: .5s ease;
 }
 .tab-group li a:hover {
-  background: #179b77;
+  background: royalblue;
   color: #ffffff;
 }
 .tab-group .active a {
-  background: #1ab188;
+  background: royalblue;
   color: #ffffff;
 }
 
@@ -76,13 +76,13 @@ h1 {
 
 h2 {
     text-align: center;
-    color: #1ab188;
+    color: royalblue;
     font-weight: 1000;
     margin: 0;
 }
 
 span {
-    color: #1ab188;
+    color: royalblue;
     font-weight: bold;
 }
 
@@ -117,7 +117,7 @@ label {
 }
 label .req {
   margin: 2px;
-  color: #1ab188;
+  color: royalblue;
 }
 
 label.active {
@@ -150,7 +150,7 @@ input, textarea {
 }
 input:focus, textarea:focus {
   outline: 0;
-  border-color: #1ab188;
+  border-color: royalblue;
 }
 
 textarea {
@@ -186,14 +186,14 @@ textarea {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #1ab188;
+  background: royalblue;
   color: #ffffff;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
 .button:hover, .button:focus {
-  background: #179b77;
+  background: royalblue;
 }
 
 .button-block {
