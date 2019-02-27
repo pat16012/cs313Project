@@ -19,10 +19,9 @@ $hash = pg_escape_string( md5( rand(0,1000) ) );
 // Check to see if the email already exists
 $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
-$resultData = pg_fetch_array($result,0);
+$resultData = pg_fetch_all($result,PGSQL_BOTH);
 
-echo("result: $resultData");
-echo("result[0]: $resultData[0]");
+echo("result[0]: " . $resultData[0][3]);
 
 // Add user is result of check comes back false
 if($resultData[0][3] == $email){
