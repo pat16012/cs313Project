@@ -10,17 +10,38 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
+    <?php include 'css/css.html'; ?>
 </head>
 <body>
 
-<h1>Welcome</h1>
-    <div>
-        <form action="verify.php" method="post" autocomplete="off">
-            E-mail:         <br><input type="email" required name="email" ><br>
-            Password:       <br><input type="password" required name="password" ><br>
-            <input type="Submit">
-        </form>
-    </div>
+
     
+
+<div class="tab-content">
+
+<div id="login">   
+ <h1>Welcome Back</h1>
+ 
+ <form action="verify.php" method="post" autocomplete="off">
+ 
+   <div class="field-wrap">
+   <label>
+     Email Address<span class="req">*</span>
+   </label>
+   <input type="email" required autocomplete="off" name="email"/>
+ </div>
+ 
+ <div class="field-wrap">
+   <label>
+     Password<span class="req">*</span>
+   </label>
+   <input type="password" required autocomplete="off" name="password"/>
+ </div>
+ <button class="button button-block" name="login" >Log In</button>
+ </form>
+
+
+
+
 </body>
 </html>
