@@ -15,7 +15,12 @@ session_start();
 <body>
 
 
-    
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab active"><a href="#login">Log In</a></li>
+      </ul>   
 
 <div class="tab-content">
 
@@ -40,8 +45,8 @@ session_start();
  <button class="button button-block" name="login" >Log In</button>
  </form>
 
-
-
+ </div>
+ </div>
 
 </body>
 </html>
