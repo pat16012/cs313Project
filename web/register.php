@@ -30,7 +30,7 @@ if($resultData[0][3] == $email){
     
 }
 else{
-    $sql = "INSERT INTO users (first_name, last_name, email, password)"
+    $sql = "INSERT INTO users (first_name, last_name, email, password, hash)"
     . "VALUES ('$first_name','$last_name','$email','$password','$hash')";
 
    if( pg_query($db, $sql)){
