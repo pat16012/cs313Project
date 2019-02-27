@@ -13,7 +13,7 @@ $result = pg_query($db,$query);
 $resultData = pg_fetch_all($result,PGSQL_BOTH);
 
 //echo("Datauser [0]: $user");
-echo("Datauser [0]: " . $user[0][3] . " END ");
+echo("Datauser [0]: " . $resultData[0][3] . " END ");
 print_r($resultData);
 
 if($resultData[0][3] != $email){
