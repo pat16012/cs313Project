@@ -46,19 +46,6 @@ else {
           ?>
           </p>
           
-          <?php
-          
-          // Keep reminding the user this account is not active, until they activate
-          if ( !$active ){
-              echo
-              '<div class="info">
-              Account is unverified, please confirm your email by clicking
-              on the email link!
-              </div>';
-          }
-          
-          ?>
-          
           <h2><?php echo $first_name.' '.$last_name; ?></h2>
           <p><?= $email ?></p>
           
