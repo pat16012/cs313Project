@@ -22,6 +22,8 @@ session_start();
         <li class="tab active"><a href="login.php">Log In</a></li>
       </ul>
 </div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="js/index.js"></script>
     
 </body>
 </html>
