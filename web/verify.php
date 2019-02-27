@@ -11,19 +11,28 @@ $password = pg_escape_string($_POST['password']);
 $query = "SELECT * FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_all($result,PGSQL_BOTH);
-
-//echo("Datauser [0]: $user");
-echo("Datauser [0]: " . $resultData[0][3] . " END ");
-print_r($resultData);
-
+;
 if($resultData[0][3] != $email){
     $_SESSION['message'] = "User with that email doesn't exist!";
-    echo("Email not used before");
-   // header("location: error.php");
+    header("location: error.php");
 }
 else{
-    $user = $resultData[0];
-    echo("Email parting before");
+    if(password_verify($_POST['password'], $resultData[0][4])){
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['first_name'] = $user['first_name'];
+        $_SESSION['last_name'] = $user['last_name'];
+        
+        // Know if user is logged in
+        $_SESSION['logged_in'] = true;
+
+        header("location: profile.php");
+
+    }
+    else {
+        $_SESSION['message'] = "You have entered the wrong password, please try again";
+        header("location: error.php");
+    }    
+
 }
 
 ?>
