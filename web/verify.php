@@ -33,14 +33,14 @@ else{
         
         // Know if user is logged in
         $_SESSION['logged_in'] = true;
-        echo 'Password is valid!';
+        echo 'Password is valid2!';
         //header("location: profile.php");
 
     }
     else {
         $_SESSION['message'] = "You have entered the wrong password, please try again";
         //header("location: error.php");
-        echo 'Password is invalid!';
+        echo 'Password is invalid2!';
     }    
 
 }
