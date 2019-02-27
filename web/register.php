@@ -14,6 +14,7 @@ $first_name = pg_escape_string($_POST['firstname']);
 $last_name = pg_escape_string($_POST['lastname']);
 $email = pg_escape_string($_POST['email']);
 $password = pg_escape_string(password_hash($_POST['password'], PASSWORD_DEFAULT));
+$hash = pg_escape_string( md5( rand(0,1000) ) );
 
 // Check to see if the email already exists
 $query = "SELECT email FROM users WHERE email='$email'";
@@ -31,11 +32,15 @@ if($resultData[0] == $email){
 }
 else{
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
-    . "VALUES ('$first_name','$last_name','$email','$password')";
+    . "VALUES ('$first_name','$last_name','$email','$password','$hash')";
 
    if( pg_query($db, $sql)){
 
        $_SESSION['logged_in'] = true; // So we know when the user has logged in
+       $_SESSION['message'] =
+                
+                 "Confirmation link has been sent to $email, please verify
+                 your account by clicking on the link in the message!";
        //redirect to profile page
        header("Location: login.php");
    }

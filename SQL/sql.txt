@@ -6,11 +6,13 @@ CREATE TABLE users
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
-    password VARCHAR(256) NOT NULL    
+    password VARCHAR(256) NOT NULL,
+    hash VARCHAR(50) NOT NULL,
+    active BOOLEAN NOT NULL DEFAULT FALSE   
 );
 
-INSERT INTO users (first_name, last_name, email, password, hash) 
-VALUES ('Justin', 'Paton', 'exno22@gmail.com', 'testpass', 1001);
+"INSERT INTO users (first_name, last_name, email, password, hash) " 
+            . "VALUES ('$first_name','$last_name','$email','$password', '$hash')";
 
 "SELECT * FROM users WHERE email='$email'";
 
