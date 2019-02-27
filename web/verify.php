@@ -11,10 +11,13 @@ $password = pg_escape_string($_POST['password']);
 $query = "SELECT * FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_all($result,PGSQL_BOTH);
-;
+$unHash = password_verify($_POST['password'], $resultData[0][4]);
+
+echo("returned password:" . $resultData[0][4] . "<br>");
+echo("unHash Password:  $unHash");
 if($resultData[0][3] != $email){
     $_SESSION['message'] = "User with that email doesn't exist!";
-    header("location: error.php");
+    //header("location: error.php");
 }
 else{
     if(password_verify($_POST['password'], $resultData[0][4])){
@@ -25,12 +28,12 @@ else{
         // Know if user is logged in
         $_SESSION['logged_in'] = true;
 
-        header("location: profile.php");
+        //header("location: profile.php");
 
     }
     else {
         $_SESSION['message'] = "You have entered the wrong password, please try again";
-        header("location: error.php");
+        //header("location: error.php");
     }    
 
 }
