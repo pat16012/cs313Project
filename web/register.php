@@ -41,6 +41,21 @@ else{
                 
                  "Confirmation link has been sent to $email, please verify
                  your account by clicking on the link in the message!";
+
+        // Send registration confirmation link (verify.php)
+        $to      = $email;
+        $subject = 'Account Verification ( https://cs313-project.herokuapp.com/ )';
+        $message_body = '
+        Hello '.$first_name.',
+
+        Thank you for signing up!
+
+        Please click this link to activate your account:
+
+        https://cs313-project.herokuapp.com/accountVerify.php?email='.$email.'&hash='.$hash;  
+
+        mail( $to, $subject, $message_body );
+
        //redirect to profile page
        header("Location: login.php");
    }
