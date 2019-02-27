@@ -18,11 +18,11 @@ session_start();
 <div class="form">
       
       <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab active"><a href="#login">Log In</a></li>
+        <li class="tab active"><a href="signup.php">Sign Up</a></li>
+        <li class="tab active"><a href="login.php">Log In</a></li>
       </ul>   
 
-<div class="tab-content">
+<div class="tab-content"></div>
 
 <div id="login">   
  <h1>Welcome Back</h1>
