@@ -43,7 +43,7 @@ else{
 
         // Send registration confirmation link (verify.php)
         $to      = $email;
-        $subject = 'Account Verification ( https://cs313-project.herokuapp.com/ )';
+        $subject = 'Account Verification ( Famjamconnect.com )';
         $message_body = '
         Hello '.$first_name.',
 
