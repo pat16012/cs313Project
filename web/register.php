@@ -21,14 +21,11 @@ $query = "SELECT email FROM users WHERE email='$email'";
 $result = pg_query($db,$query);
 $resultData = pg_fetch_array($result,0);
 
-echo("This is the result before if: $resultData <br>");
-print_r($resultData);
-
 // Add user is result of check comes back false
 if($resultData[0] == $email){
     $_SESSION['Message'] = 'Email Provided Already in Use';
-    //header("location: error.php");
-    echo("This is the result inside the if: $resultData[0]");
+    header("location: error.php");
+    
 }
 else{
     $sql = "INSERT INTO users (first_name, last_name, email, password)"
