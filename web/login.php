@@ -13,7 +13,7 @@ session_start();
     <?php include 'css/css.html'; ?>
 </head>
 <body>
-
+<img class="imgLogo" src="img/famjamlogo.jpg">
 
 <div class="form">
       

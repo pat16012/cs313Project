@@ -21,20 +21,6 @@ a:hover {
   color: #577df0;
 }
 
-.imgLogo {
-  position: fixed;
-  left: 50%;
-  max-width: 600px;
-  margin-left: -300px;
-  padding-bottom: 5px;
-  
-}
-
-.imgfam {
-  margin-left: -40px;
-}
-
-
 .form {
   background: rgba(19, 35, 47, 0.9); 
   padding: 40px;
@@ -44,11 +30,10 @@ a:hover {
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
 
-
 .tab-group {
   list-style: none;
   padding: 0;
-  margin: 100px 0 40px 0;
+  margin: 0 0 40px 0;
 }
 .tab-group:after {
   content: "";
