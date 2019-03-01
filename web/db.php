@@ -1,7 +1,7 @@
 <?php
 function get_db() {
 	$db = NULL;
-	$db = pg_connect("host=localhost port=5432 dbname=accounts user=postgres password=/Paton85sql");
+	$db = pg_connect(getenv("DATABASE_URL"));
 	
 	/*try {
 		
