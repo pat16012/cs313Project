@@ -1,9 +1,5 @@
 .imgLogo {
-<<<<<<< HEAD
     position: absolute;
-=======
-    position: fixed;
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
     left: 50%;
     max-width: 600px;
     margin-left: -300px;
@@ -11,22 +7,15 @@
 
   .row {
       padding: 60px;
-<<<<<<< HEAD
       
      
     }
-=======
-  }
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
 
 
 .topnav {
     background-color: royalblue;
     overflow: hidden;
-<<<<<<< HEAD
     
-=======
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
   }
   
  
@@ -36,11 +25,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-<<<<<<< HEAD
     font-size: 20px;
-=======
-    font-size: 17px;
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
   }
   
   .topnav a.active {
@@ -48,7 +33,6 @@
     color: white;
   }
 
-<<<<<<< HEAD
   .topnav a.right {
     float: right;
     background-color: grey;
@@ -61,17 +45,16 @@
     color: white;
   }
 
-=======
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
 
 * {
     box-sizing: border-box;
+    border: #555;
+    border-color: #555;
   }
   
   /* Create three equal columns that floats next to each other */
   .column {
     float: left;
-<<<<<<< HEAD
     width: 20%;
     padding: 10px;
     padding-top: 100px;
@@ -89,13 +72,6 @@
     
   }
 
-=======
-    width: 33.33%;
-    padding: 10px;
-    padding-top: 100px;
-  }
-  
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -103,12 +79,6 @@
     clear: both;
   }
 
-<<<<<<< HEAD
-  .topnav #logout {
-     
-     
-  }
+  
 
-=======
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
   

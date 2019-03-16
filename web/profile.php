@@ -16,9 +16,8 @@ else {
     $email = $_SESSION['email'];
 }
 ?>
-
-
-<!DOCTYPE html>
+ 
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,37 +26,19 @@ else {
     <title>Welcome <?= $first_name.' '.$last_name ?></title>
     <link rel="stylesheet" href="css/profile.css">
 </head>
-<body>
-<img class="imgLogo" src="img/famjamlogo.jpg">
-<div class="row"></div>
-<div class="topnav">
-  <a class="active" href="profile.php">Home</a>
-<<<<<<< HEAD
-  <a><strong><?php echo "Welcome   ". $first_name. ' ' .$last_name. '    '. $email;?></strong></a>
-  <div>
-    <a class="right select" id="logout" href="logout.php">Log Out</a>
-  </div>
-  
-</div> 
-=======
-  <a><strong><?php echo "Welcome - ". $first_name. ' ' .$last_name. ' - '. $email;?></strong></a>
-</div> 
+
+ <?php include 'header.php'?>
 
 <div class="row">
-    <div class="column ">hello 1</div>
-    <div class="column ">hello 2</div>
-    <div class="column ">hello 3</div>
-</div> 
-  
-<div>
-           
-          <a href="logout.php"><button class="button button-block" name="logout">Log Out</button></a>
->>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
-
-<div class="row">
-    <div class="column">hello 1</div>
-    <div class="middle">hello 2</div>
-    <div class="column">hello 3</div>
+    <div class="column">
+      <object type="text/html" data="frame/friend_frame.php"></object>
+    </div>
+    <div class="middle">
+      <object type="text/html" data="frame/current_frame.php"></object>
+    </div>
+    <div class="column">
+      <object type="text/html" data="frame/holder_frame.php"></object>
+    </div>
 </div> 
   
     
