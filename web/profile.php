@@ -32,12 +32,27 @@ else {
 <div class="row"></div>
 <div class="topnav">
   <a class="active" href="profile.php">Home</a>
+<<<<<<< HEAD
   <a><strong><?php echo "Welcome   ". $first_name. ' ' .$last_name. '    '. $email;?></strong></a>
   <div>
     <a class="right select" id="logout" href="logout.php">Log Out</a>
   </div>
   
 </div> 
+=======
+  <a><strong><?php echo "Welcome - ". $first_name. ' ' .$last_name. ' - '. $email;?></strong></a>
+</div> 
+
+<div class="row">
+    <div class="column ">hello 1</div>
+    <div class="column ">hello 2</div>
+    <div class="column ">hello 3</div>
+</div> 
+  
+<div>
+           
+          <a href="logout.php"><button class="button button-block" name="logout">Log Out</button></a>
+>>>>>>> 365bb5a09ebf51fdd2fea4b05584506a8627adc2
 
 <div class="row">
     <div class="column">hello 1</div>
