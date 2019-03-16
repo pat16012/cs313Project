@@ -1,5 +1,7 @@
 <?php
 /* Displays user information and some useful messages */
+require ('db.php');
+$db = get_db();
 session_start();
 
 // Check if user is logged in using the session variable
@@ -23,46 +25,26 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome <?= $first_name.' '.$last_name ?></title>
-    <?php include 'css/css.html'; ?>
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
-    
-  <div class="form">
-  <h1>Welcome</h1>
-  <p>
-          <?php 
-     
-          // Display message about account verification link only once
-          if ( isset($_SESSION['message']) )
-          {
-              echo $_SESSION['message'];
-              
-              // Don't annoy the user with more messages upon page refresh
-              unset( $_SESSION['message'] );
-          }
-          
-          ?>
-          </p>
+<img class="imgLogo" src="img/famjamlogo.jpg">
+<div class="row"></div>
+<div class="topnav">
+  <a class="active" href="profile.php">Home</a>
+  <a><strong><?php echo "Welcome   ". $first_name. ' ' .$last_name. '    '. $email;?></strong></a>
+  <div>
+    <a class="right select" id="logout" href="logout.php">Log Out</a>
+  </div>
+  
+</div> 
 
-          <?php
-          
-          // Keep reminding the user this account is not active, until they activate
-          if ( !$active ){
-              echo
-              '<div class="info">
-              Account is unverified, please confirm your email by clicking
-              on the email link!
-              </div>';
-          }
-          
-          ?>
-          
-          <h2><?php echo $first_name.' '.$last_name; ?></h2>
-          <p><?= $email ?></p>
-          
-          <a href="logout.php"><button class="button button-block" name="logout">Log Out</button></a>
-
-    </div>
+<div class="row">
+    <div class="column">hello 1</div>
+    <div class="middle">hello 2</div>
+    <div class="column">hello 3</div>
+</div> 
+  
     
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/index.js"></script>

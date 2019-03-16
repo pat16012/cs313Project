@@ -1,0 +1,85 @@
+.imgLogo {
+    position: absolute;
+    left: 50%;
+    max-width: 600px;
+    margin-left: -300px;
+  }
+
+  .row {
+      padding: 60px;
+      
+     
+    }
+
+
+.topnav {
+    background-color: royalblue;
+    overflow: hidden;
+    
+  }
+  
+ 
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  .topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .topnav a.right {
+    float: right;
+    background-color: grey;
+    color: white;
+  }
+
+  .topnav a.select.hover:not(.active) {
+
+    background-color: #555;
+    color: white;
+  }
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    padding-top: 100px;
+    text-align: center;
+    
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .middle {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    padding-top: 100px;
+    text-align: center;
+    
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .topnav #logout {
+     
+     
+  }
+
+  
