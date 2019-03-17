@@ -63,6 +63,8 @@ a:hover {
   color: #ffffff;
 }
 
+
+
 .tab-content > div:last-child {
   display: none;
 }
@@ -204,4 +206,8 @@ textarea {
 .forgot {
   margin-top: -20px;
   text-align: right;
+}
+
+img {
+  margin: auto;
 }

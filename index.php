@@ -14,9 +14,12 @@ session_start();
 </head>
 <body>
 <div class="form">
-<img  src="web/img/famjamlogo.jpg">
+
 <div>
-<img  src="web/img/famjam.jpg">
+<div class="img">
+  <img  src="web/img/famjamlogo.jpg">
+  <img  src="web/img/famjam.jpg">
+</div>
 <h2>Please Choose a Selection</h2>
 <ul class="tab-group">
         <li class="tab active"><a href="web/signup.php">Sign Up</a></li>
