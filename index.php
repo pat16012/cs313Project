@@ -16,7 +16,7 @@ session_start();
 <div class="form">
 
 <div>
-<div class="img">
+<div>
   <img  src="web/img/famjamlogo.jpg">
   <img  src="web/img/famjam.jpg">
 </div>
