@@ -8,6 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome <?= $first_name.' '.$last_name ?></title>
     <link rel="stylesheet" href="css/profile.css">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
 <div class="row">

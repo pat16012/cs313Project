@@ -11,6 +11,8 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Welcome</title>
     <?php include 'css/css.html'; ?>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
 <div class="form">
@@ -27,8 +29,7 @@ session_start();
 </ul>
 
 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="js/index.js"></script>
+
     
 </body>
 </html>
