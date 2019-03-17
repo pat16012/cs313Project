@@ -27,9 +27,5 @@ session_start();
         <li class="tab active"><a href="web/signup.php">Sign Up</a></li>
         <li class="tab active"><a href="web/login.php">Log In</a></li>
 </ul>
-
-
-
-    
 </body>
 </html>

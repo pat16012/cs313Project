@@ -14,7 +14,6 @@ body {
 a {
   text-decoration: none;
   color: #577df0;
-  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 a:hover {
@@ -51,7 +50,6 @@ a:hover {
   width: 50%;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: .5s ease;
   transition: .5s ease;
 }
 .tab-group li a:hover {
@@ -107,13 +105,10 @@ div.info {
 
 label {
   position: absolute;
-  -webkit-transform: translateY(6px);
           transform: translateY(6px);
   left: 13px;
   color: rgba(136, 136, 136, 0.5);
-  -webkit-transition: all 0.25s ease;
   transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   pointer-events: none;
   font-size: 22px;
@@ -124,7 +119,6 @@ label .req {
 }
 
 label.active {
-  -webkit-transform: translateY(50px);
           transform: translateY(50px);
   left: 2px;
   font-size: 14px;
@@ -148,7 +142,6 @@ input, textarea {
   border: 1px solid #a0b3b0;
   color: #ffffff;
   border-radius: 0;
-  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
 input:focus, textarea:focus {
@@ -191,9 +184,8 @@ textarea {
   letter-spacing: .1em;
   background: royalblue;
   color: #ffffff;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  -webkit-appearance: none;
+  appearance: none;
 }
 .button:hover, .button:focus {
   background: #577df0;
