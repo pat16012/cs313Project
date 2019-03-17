@@ -14,9 +14,9 @@ session_start();
 </head>
 <body>
 
-
+<img class="imgLogo" src="img/famjamlogo.jpg">
 <div class="form">
-<img  src="img/famjamlogo.jpg">
+
       <ul class="tab-group">
         <li class="tab active"><a href="signup.php">Sign Up</a></li>
         <li class="tab active"><a href="login.php">Log In</a></li>
