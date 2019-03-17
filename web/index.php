@@ -12,19 +12,12 @@ session_start();
     <title>Welcome</title>
     <?php include 'css/css.html'; ?>
 </head>
-
-
 <body>
-  <img class="imgLogo" src="img/famjamlogo.jpg">
-
 <div class="form">
+<img class="imgfam" src="img/famjamlogo.jpg">
 <div>
-<h1>Welcome to <strong>FAMJAM</strong> Connect</h1><br>
-
 <img class="imgfam" src="img/famjam.jpg">
-
 <h2>Please Choose a Selection</h2>
-
 <ul class="tab-group">
         <li class="tab active"><a href="signup.php">Sign Up</a></li>
         <li class="tab active"><a href="login.php">Log In</a></li>
