@@ -1,5 +1,5 @@
 <?php
-require ('db.php');
+require ('web/db.php');
 session_start();
 ?>
 
@@ -21,8 +21,8 @@ session_start();
 <ul class="tab-group">
         <li class="tab active"><a href="web/signup.php">Sign Up</a></li>
         <li class="tab active"><a href="web/login.php">Log In</a></li>
-      </ul>
-</>
+</ul>
+
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 <script src="js/index.js"></script>
